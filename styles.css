@@ -1,0 +1,234 @@
+/* General Styles */
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #111;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1.moving-sign {
+    margin: 0;
+    font-size: 24px;
+    animation: move 5s infinite;
+}
+
+@keyframes move {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0); }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#hero {
+    background: url('hero-bg1.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.black-text {
+    color: #000; /* Black text color */
+}
+
+#hero h2 {
+    margin: 0;
+    font-size: 36px;
+}
+
+#hero p {
+    font-size: 18px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+}
+
+.event-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center events */
+    position: relative;
+}
+
+.event {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    text-align: center;
+    width: 22%;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.event img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.event:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.event-info::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background-blur.jpg') no-repeat center center/cover;
+    filter: blur(10px); /* Blurry background photo */
+    z-index: -1;
+}
+
+button.buy-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button.buy-btn:hover {
+    background-color: #218838;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.thank-you-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #28a745;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    z-index: 1000;
+}
+
+/* Artists Page Styles */
+.artists-page {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.artist-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.artist-profile img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.artist-profile h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.artist-profile p {
+    margin: 5px 0 0;
+    font-size: 16px;
+}
+
+.artist-profile .artist-bio {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .event-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event {
+        width: 90%;
+    }
+
+    #hero h2 {
+        font-size: 28px;
+    }
+
+    #hero p {
+        font-size: 16px;
+    }
+
+    .artist-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .artist-profile img {
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+}
